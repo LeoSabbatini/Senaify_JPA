@@ -2,17 +2,17 @@ package com.senaify.service;
 
 import com.senaify.model.Musica;
 import com.senaify.repository.MusicaRepository;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
 public class MusicaService {
 
-    private final MusicaRepository musicaRepository;
+    @Autowired
+    private MusicaRepository musicaRepository;
 
     public List<Musica> listarTodas() {
         return musicaRepository.findAll();

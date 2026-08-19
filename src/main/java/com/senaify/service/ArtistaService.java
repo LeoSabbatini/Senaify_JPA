@@ -2,17 +2,17 @@ package com.senaify.service;
 
 import com.senaify.model.Artista;
 import com.senaify.repository.ArtistaRepository;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
 public class ArtistaService {
 
-    private final ArtistaRepository artistaRepository;
+    @Autowired
+    private ArtistaRepository artistaRepository;
 
     public List<Artista> listarTodos() {
         return artistaRepository.findAll();

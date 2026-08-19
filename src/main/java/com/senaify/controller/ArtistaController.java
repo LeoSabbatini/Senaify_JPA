@@ -2,7 +2,7 @@ package com.senaify.controller;
 
 import com.senaify.model.Artista;
 import com.senaify.service.ArtistaService;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,10 +11,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/artistas")
-@RequiredArgsConstructor
 public class ArtistaController {
 
-    private final ArtistaService artistaService;
+    @Autowired
+    private ArtistaService artistaService;
 
     @GetMapping
     public ResponseEntity<List<Artista>> listarTodos() {

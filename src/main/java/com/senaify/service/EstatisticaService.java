@@ -2,17 +2,17 @@ package com.senaify.service;
 
 import com.senaify.model.Estatistica;
 import com.senaify.repository.EstatisticaRepository;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
 @Service
-@RequiredArgsConstructor
 public class EstatisticaService {
 
-    private final EstatisticaRepository estatisticaRepository;
+    @Autowired
+    private EstatisticaRepository estatisticaRepository;
 
     public List<Estatistica> listarTodas() {
         return estatisticaRepository.findAll();

@@ -2,7 +2,7 @@ package com.senaify.controller;
 
 import com.senaify.model.Estatistica;
 import com.senaify.service.EstatisticaService;
-import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,10 +11,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/estatisticas")
-@RequiredArgsConstructor
 public class EstatisticaController {
 
-    private final EstatisticaService estatisticaService;
+    @Autowired
+    private EstatisticaService estatisticaService;
 
     @GetMapping
     public ResponseEntity<List<Estatistica>> listarTodas() {
