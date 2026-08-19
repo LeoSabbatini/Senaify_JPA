@@ -12,10 +12,10 @@ import java.util.List;
 public interface ArtistaRepository extends JpaRepository<Artista, Long> {
 
     // Buscar artistas cujo nome contenha o texto informado
-    List<Artista> findByNomeContem(String nome);
+    List<Artista> findByNome(String nome);
 
     // Buscar artistas por nacionalidade
-    @Query("SELECT a FROM Artist a WHERE a.nacionalidade = :nacionalidade")
+    @Query("SELECT a FROM Artista a WHERE a.nacionalidade = :nacionalidade")
     List<Artista> buscarPorNacionalidade(@Param("nacionalidade") String nacionalidade);
 
     // Buscar artistas que possuem biografia preenchida
@@ -26,5 +26,5 @@ public interface ArtistaRepository extends JpaRepository<Artista, Long> {
     List<Artista> buscarPorNomeParecido(@Param("nome") String nome);
 
     // Buscar artistas por país de origem
-    List<Artista> findByPais(String pais);
+    List<Artista> findByNacionalidade(String pais);
 }

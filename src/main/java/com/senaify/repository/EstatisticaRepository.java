@@ -23,7 +23,7 @@ public interface EstatisticaRepository extends JpaRepository<Estatistica, Long> 
     List<Estatistica> findByTotalReproducoesGreaterThan(Long minimo);
 
     // Buscar estatísticas com mais curtidas que o valor informado, ordenadas por curtidas
-    @Query("SELECT e FROM estatisticas e WHERE e.totalCurtidas > :curtidas ORDER BY e.totalCurtidas DESC")
+    @Query("SELECT e FROM Estatistica e WHERE e.totalCurtidas > :curtidas ORDER BY e.totalCurtidas DESC")
     List<Estatistica> buscarMaisCurtidas(@Param("curtidas") Long curtidas);
 
     // Buscar estatísticas com reproduções acima do mínimo, ordenadas pelo título da música
