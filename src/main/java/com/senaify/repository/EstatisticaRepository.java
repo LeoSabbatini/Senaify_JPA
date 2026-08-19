@@ -17,7 +17,7 @@ public interface EstatisticaRepository extends JpaRepository<Estatistica, Long> 
 
     // Buscar o total de reproduções de todas as músicas de um artista
     @Query("SELECT SUM(e.totalReproducoes) FROM Estatistica e WHERE e.musica.artista.id = :artistaId")
-    List<Estatistica> buscarTotalReproducoesPorArtista(@Param("artistaId") Long artistaId);
+    Long buscarTotalReproducoesPorArtista(@Param("artistaId") Long artistaId);
 
     // Buscar estatísticas com mais de X reproduções
     List<Estatistica> findByTotalReproducoesGreaterThan(Long minimo);
