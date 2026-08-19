@@ -22,7 +22,7 @@ public interface MusicaRepository extends JpaRepository<Musica, Long> {
     List<Musica> findByArtistaIdOrderByTituloAsc(Long artistaId);
 
     // Buscar músicas lançadas em determinado ano
-    @Query("SELECT m.artista.nome FROM Musica m WHERE m.anoLancamento = :ano")
+    @Query("SELECT m FROM Musica m WHERE m.anoLancamento = :ano")
     List<Musica> buscarPorAnoLancamento(@Param("ano") Integer ano);
 
     // Buscar músicas lançadas entre dois anos

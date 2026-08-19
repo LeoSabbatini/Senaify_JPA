@@ -19,7 +19,7 @@ public interface ArtistaRepository extends JpaRepository<Artista, Long> {
     List<Artista> buscarPorNacionalidade(@Param("nacionalidade") String nacionalidade);
 
     // Buscar artistas que possuem biografia preenchida
-    List<Artista> findByBiografiaIsNotEmpty(String biografia);
+    List<Artista> findByBiografiaIsNotNull();
 
     // Buscar artistas cujo nome seja parecido com o informado (LIKE)
     @Query("SELECT a FROM Artista a WHERE a.nome LIKE %:nome%")

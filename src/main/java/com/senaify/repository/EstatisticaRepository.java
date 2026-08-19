@@ -13,7 +13,7 @@ import java.util.Optional;
 public interface EstatisticaRepository extends JpaRepository<Estatistica, Long> {
 
     // Buscar estatísticas pela música associada (por ID da música)
-    Optional<Estatistica> findByMusica_id(Long musicaId);
+    Optional<Estatistica> findByMusicaId(Long musicaId);
 
     // Buscar o total de reproduções de todas as músicas de um artista
     @Query("SELECT SUM(e.totalReproducoes) FROM Estatistica e WHERE e.musica.artista.id = :artistaId")

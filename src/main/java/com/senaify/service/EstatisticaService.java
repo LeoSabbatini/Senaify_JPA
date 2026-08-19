@@ -31,7 +31,7 @@ public class EstatisticaService {
     }
 
     public Optional<Estatistica> buscarPorMusicaId(Long musicaId) {
-        return estatisticaRepository.findByMusica_id(musicaId);
+        return estatisticaRepository.findByMusicaId(musicaId);
     }
 
     public List<Estatistica> buscarMaisCurtidas(Long curtidas) {
